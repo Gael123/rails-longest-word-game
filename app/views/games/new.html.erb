@@ -1,0 +1,14 @@
+<h1>Games#new</h1>
+<p>Longest Word Game ,let's have fun !!!!</p>
+
+<%@letters.each do |letter| %>
+<%=letter %>
+<% end%>
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <input type="text" name="letters" placeholder="letter">
+  <%= hidden_field_tag :available_letters, @letters %>
+  <input type="submit" value = "enter a letter">
+</form>
+<%=@response%>
